@@ -314,9 +314,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TreeAmount: 600
-  EnemyAmount: 100
+  EnemyAmount: 85
+  StoneAmount: 0
   Memm: {fileID: 4548823452101999296, guid: 122d1f8442c8fb2408f54c95615fd776, type: 3}
   Tree: {fileID: 1747309670987298755, guid: 9c676747acba05447ac94df94f1a972f, type: 3}
+  Stone: {fileID: 1747309670987298755, guid: 8acdeb83404512046be035e104d45e19, type: 3}
 --- !u!1001 &746329221
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1580,6 +1582,7 @@ GameObject:
   - component: {fileID: 6566045455611333049}
   - component: {fileID: 6566045455611333048}
   - component: {fileID: 6566045455611333051}
+  - component: {fileID: 6566045455611333052}
   m_Layer: 5
   m_Name: PlayerSprite
   m_TagString: Untagged
@@ -1681,6 +1684,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4dad27c68afea845931858b7efbcb21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &6566045455611333052
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6566045455611333046}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1219c225e8383f84d828aebe0ca274f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6566045456497567058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,7 +1762,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 047e23d8828829942a584b8aa850d594, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0387601e18d84244292c8003f8463fd9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
