@@ -314,8 +314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TreeAmount: 600
-  EnemyAmount: 85
-  StoneAmount: 0
+  EnemyAmount: 50
+  StoneAmount: 100
   Memm: {fileID: 4548823452101999296, guid: 122d1f8442c8fb2408f54c95615fd776, type: 3}
   Tree: {fileID: 1747309670987298755, guid: 9c676747acba05447ac94df94f1a972f, type: 3}
   Stone: {fileID: 1747309670987298755, guid: 8acdeb83404512046be035e104d45e19, type: 3}
