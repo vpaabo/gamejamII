@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditorInternal;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -10,17 +11,19 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        //attacking = false;
+        print("start");
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKey(KeyCode.Mouse0))
         {
-            controller.SetBool("attack", true);
+            Debug.Log("Yes");
         }
         else
         {
-            controller.SetBool("attack", false);
+            Debug.Log("No");
         }
+        //controller.SetBool("attack", true);
+    
     }
 }

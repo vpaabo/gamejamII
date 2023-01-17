@@ -8,9 +8,14 @@ public class StartGame : MonoBehaviour
     {
         public string LevelName;
 
-        public void LoadLevel()
+    private void Start()
+    {
+        print("start");
+    }
+    public void LoadLevel()
         {
         SceneManager.LoadScene(LevelName);
+        print("pressed");
         }
 
     }

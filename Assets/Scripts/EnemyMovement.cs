@@ -25,7 +25,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print(movementTarget.transform.position);
+        //print(movementTarget.transform.position);
         agent.SetDestination(movementTarget.transform.position);
         /*
         if (!agent.pathPending)
