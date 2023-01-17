@@ -18,10 +18,12 @@ public class PlayerAttack : MonoBehaviour
         if (Input.GetKey(KeyCode.Mouse0))
         {
             Debug.Log("Yes");
+            controller.SetBool("attack", true);
         }
         else
         {
             Debug.Log("No");
+            controller.SetBool("attack", false);
         }
         //controller.SetBool("attack", true);
     
