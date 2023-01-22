@@ -6,6 +6,31 @@ public class GameManager : MonoBehaviour
     bool gameHasEnded = false;
 
     public float restartDelay = 2f;
+
+
+    public KeyCode restartButton;
+    public KeyCode pauseButton;
+    private bool paused;
+
+
+    private void Start()
+    {
+        paused = false;
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(pauseButton))
+        {
+            Time.timeScale = (paused) ? 0 : 1;
+            paused = !paused;
+        }
+        else if (Input.GetKeyDown(restartButton))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+
+
+    }
     public void EndGame()
     {
         if (gameHasEnded == false) 

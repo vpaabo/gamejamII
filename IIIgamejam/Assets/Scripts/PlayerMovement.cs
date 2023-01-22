@@ -18,15 +18,12 @@ public class PlayerMovement : MonoBehaviour
     }
     void Update()
     {
-        speed += acceleration * Time.deltaTime * 0.0001f;
-        acceleration += 0.01f;
-        gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * 0.1f, 0,speed);
+        speed += acceleration * Time.deltaTime * 0.001f;
+        acceleration += 0.001f;
+        gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * 0.5f, 0, speed) * Time.timeScale;
 
 
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("Level01");
-        }
+        
 
         if (rb.position.y < -1f) 
         {
