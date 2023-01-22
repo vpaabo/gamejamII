@@ -21,8 +21,9 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(pauseButton))
         {
-            Time.timeScale = (paused) ? 0 : 1;
             paused = !paused;
+            Time.timeScale = (paused) ? 0 : 1;
+            
         }
         else if (Input.GetKeyDown(restartButton))
         {
