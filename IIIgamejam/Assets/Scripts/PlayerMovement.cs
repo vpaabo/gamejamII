@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("space pressed");
+            //print("space pressed");
             if (transform.position.y > 1.5f) return;
 
             rb.AddForce(new Vector3(0, jumpForce, 0),ForceMode.Impulse);
@@ -35,13 +35,13 @@ public class PlayerMovement : MonoBehaviour
 
         if (rb.position.y < -1.5f) 
         {
-            print("pos.y < -1");
+            //print("pos.y < -1");
             FindObjectOfType<GameManager>().EndGame();
         }
 
         if(transform.position.z >= 1000)
         {
-            print("game won!!");
+            //print("game won!!");
             GameManager.PauseGame();
         }
     }

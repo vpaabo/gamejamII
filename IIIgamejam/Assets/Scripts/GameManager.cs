@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
 
     public KeyCode restartButton;
     public KeyCode pauseButton;
-    private static bool paused;
+    public static bool paused;
 
 
     private void Start()

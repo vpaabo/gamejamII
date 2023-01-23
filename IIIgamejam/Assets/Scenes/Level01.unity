@@ -1301,7 +1301,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1410737316837586520, guid: 657ce8b3064bdcd46805f1e9fe8acca6, type: 3}
       propertyPath: acceleration
-      value: 1.1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1410737316837586520, guid: 657ce8b3064bdcd46805f1e9fe8acca6, type: 3}
       propertyPath: forwardForce

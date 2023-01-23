@@ -8,5 +8,7 @@ public class StartGame : MonoBehaviour
     public void LoadLevel()
     {
         SceneManager.LoadScene(LevelName);
+        GameManager.paused = false;
+        Time.timeScale = 1;
     }
 }

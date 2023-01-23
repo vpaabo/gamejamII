@@ -12,7 +12,7 @@ public class PlayerCollision : MonoBehaviour
         if (col.gameObject.tag.Equals("Obsicle"))
         {
             movement.enabled = false;
-            print("collision");
+            //print("collision");
             FindObjectOfType<GameManager>().EndGame();
         }
         
