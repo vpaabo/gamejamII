@@ -3,14 +3,14 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    bool gameHasEnded = false;
+    public PlayerMovement player;
 
-    public float restartDelay = 2f;
+    public static float restartDelay = 2f;
 
 
     public KeyCode restartButton;
     public KeyCode pauseButton;
-    private bool paused;
+    private static bool paused;
 
 
     private void Start()
@@ -21,9 +21,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(pauseButton))
         {
-            paused = !paused;
-            Time.timeScale = (paused) ? 0 : 1;
-            
+            PauseGame();
         }
         else if (Input.GetKeyDown(restartButton))
         {
@@ -32,17 +30,28 @@ public class GameManager : MonoBehaviour
 
 
     }
+
+    public static void PauseGame()
+    {
+        Time.timeScale = (paused) ? 1 : 0;
+        paused = !paused;
+    }
     public void EndGame()
     {
-        if (gameHasEnded == false) 
+        if (player.transform.position.z >= 1000)
         {
-            gameHasEnded = true;
-            print("Game Over");
-            Invoke("Restart", restartDelay);
+            WinGame();
+            return;
         }
+        else Invoke("Restart", restartDelay);
+        
     }
 
-    void Restart ()
+    public void WinGame()
+    {
+        SceneManager.LoadScene("WinScreen");
+    }
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

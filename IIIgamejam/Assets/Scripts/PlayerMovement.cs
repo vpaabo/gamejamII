@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
 
     public float speed;
 
+    public float jumpForce;
+
 
     private void Start()
     {
@@ -19,16 +21,28 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         speed += acceleration * Time.deltaTime * 0.001f;
-        acceleration += 0.001f;
-        gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * 0.5f, 0, speed) * Time.timeScale;
+        acceleration += 0.001f * Time.timeScale;
+        gameObject.transform.position += new Vector3(Input.GetAxis("Horizontal") * 0.3f, 0, speed) * Time.timeScale;
 
 
-        
-
-        if (rb.position.y < -1f) 
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("pos.y < 1");
+            print("space pressed");
+            if (transform.position.y > 1.5f) return;
+
+            rb.AddForce(new Vector3(0, jumpForce, 0),ForceMode.Impulse);
+        }
+
+        if (rb.position.y < -1.5f) 
+        {
+            print("pos.y < -1");
             FindObjectOfType<GameManager>().EndGame();
+        }
+
+        if(transform.position.z >= 1000)
+        {
+            print("game won!!");
+            GameManager.PauseGame();
         }
     }
 }
